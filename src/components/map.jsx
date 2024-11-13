@@ -16,7 +16,7 @@ export default function Map() {
 
     map.current = new maptilersdk.Map({
       container: mapContainer.current,
-      style: maptilersdk.MapStyle.BASIC.DARK,
+      style: maptilersdk.MapStyle.DATAVIZ.DARK,
       center: [bandung.lng, bandung.lat],
       zoom: zoom
     });
@@ -93,9 +93,9 @@ export default function Map() {
   }, [bandung.lng, bandung.lat, zoom]);
 
   return (
-    <div className="flex justify-center items-center h-screen w-full">
-      <div className="relative w-[700px] max-w-[1920px] max-h-[700px] h-[calc(100vh-77px)]">
-        <div ref={mapContainer} className="absolute w-full h-full flex justify-center" />
+    <div className="flex justify-center items-center h-screen w-full text-black">
+      <div className="relative w-[85%] aspect-[1920/1000]">
+        <div ref={mapContainer} className="absolute w-full h-full flex justify-center rounded-[50px]" />
       </div>
     </div>
 
