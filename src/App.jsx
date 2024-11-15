@@ -1,18 +1,21 @@
 import React from 'react';
 import './index.css';
-import { Map, NearestCard, OtherStops } from './components';
+import { Map, NearestCard, OtherStops, RouteSection } from './components';
 
 function App() {
   return(
-    <div className="App">
+    <div className="App mt-14">
       <Map />
       <section className='mt-14 '>
-        <div className='w-full h-full flex justify-center'>
+        <section className='w-full h-full flex justify-center'>
           <NearestCard />
-        </div>
-        <div className='flex justify-center'>
+        </section>
+        <section className='flex justify-center'>
           <OtherStops />
-        </div>
+        </section>
+        <section className='flex justify-center'>
+          <RouteSection />
+        </section>
       </section>
     </div>
   )

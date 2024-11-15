@@ -16,16 +16,16 @@ const OtherStops = () => {
   };
 
   return (
-    <div className='w-[85%] aspect-[1387/355] bg-[#272727] rounded-[50px] shadow-card-shadow mb-12 flex'>
-      <div className='w-[14%] h-full flex items-center justify-center'>
-        <h3 className='text-3xl text-center'>
-          Other<br/>Nearby<br/>Stops
+    <div className='relative lg:w-[85%] md:w-[90%] w-[95%] lg:py-10 bg-[#272727] lg:rounded-[50px] md:rounded-3xl rounded-xl shadow-card-shadow mb-12 flex flex-col lg:flex-row'>
+      <div className='lg:w-[14%] h-[25%] lg:h-full flex items-center justify-center my-5'>
+        <h3 className='text-base md:text-2xl lg:text-3xl text-center font-semibold'>
+          Other <br className='hidden lg:block' />Nearby<br className='hidden lg:block' /> Stops
         </h3>
       </div>
-      
+
       <div 
         ref={scrollContainerRef} 
-        className='grow px-2 flex items-center gap-5 overflow-x-scroll scrollbar-hide'
+        className='grow px-5 mx-1 mb-8 mr-20 flex items-center gap-5 overflow-x-scroll scrollbar-hide h-[200%] lg:h-full'
       >
         <OtherStopCard title={'Bank CIMB Niaga Lembong'} distance={'750m'}>
           <CodeLabel color={'red'}>3D</CodeLabel>
@@ -47,9 +47,10 @@ const OtherStops = () => {
           <CodeLabel color={'blue'}>K2</CodeLabel>
         </OtherStopCard>
       </div>
-      
-      <div className='w-[6%] flex items-center justify-center'>
-        <button onClick={scrollRight}>
+
+      {/* Div untuk panah dengan background vertikal */}
+      <div className='absolute right-0 bottom-0 flex items-center lg:rounded-[50px] md:rounded-br-3xl rounded-br-xl justify-center bg-[#272727] h-[80%] lg:h-full px-3 py-4'>
+        <button onClick={scrollRight} className="text-white">
           <GoTriangleRight size={45} />
         </button>
       </div>

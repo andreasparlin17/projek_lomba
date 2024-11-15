@@ -4,6 +4,8 @@ import DirectionButton from "./DirectionButton";
 import CodeLabel from "./CodeLabel";
 import OtherStops from "./OtherStops";
 import OtherStopCard from "./OtherStopCard";
+import RouteSection from "./RouteSection";
+import RouteCard from "./RouteCard";
 
 export{
     Map,
@@ -11,5 +13,7 @@ export{
     DirectionButton,
     CodeLabel,
     OtherStops,
-    OtherStopCard
+    OtherStopCard,
+    RouteSection,
+    RouteCard
 }

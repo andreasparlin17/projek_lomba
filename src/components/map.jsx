@@ -93,9 +93,9 @@ export default function Map() {
   }, [bandung.lng, bandung.lat, zoom]);
 
   return (
-    <div className="flex justify-center items-center h-screen w-full text-black">
-      <div className="relative w-[85%] aspect-[1920/1000]">
-        <div ref={mapContainer} className="absolute w-full h-full flex justify-center rounded-[50px]" />
+    <div className="flex justify-center items-center w-full text-black">
+      <div className="relative lg:w-[85%] md:w-[90%] w-[95%] lg:aspect-[1920/1000] md:aspect-[1920/1280] aspect-[1920/1400]">
+        <div ref={mapContainer} className="absolute w-full h-full flex justify-center lg:rounded-[50px] md:rounded-3xl rounded-lg" />
       </div>
     </div>
 
