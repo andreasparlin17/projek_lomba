@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Destino</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Figtree:ital,wght@0,300..900;1,300..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+  font-family: "Figtree", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+        .tulisan-logo{
+            color: #F5E8D7;
+font-family: Doto;
+font-size: 20px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+        }
+
+        .tulisan-logo-2{
+color: #F5E8D7;
+font-family: Doto;
+font-size: 40px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #2FE559, #038AFF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-black">
+    <!--nav-->
+    <header id="navbar" class="fixed top-0 left-0 w-full z-10 bg-transparent transition-colors duration-300">
+      <div class="flex justify-between items-center p-6">
+          <!-- Logo -->
+          <div class="text-2xl font-bold flex items-center">
+              <img alt="Destino Logo" class="inline-block mr-2" height="50" src="../src/logo.png" width="50" />
+              <div class="tulisan-logo">Destino</div>
+          </div>
+  
+          <!-- Hamburger Menu Button -->
+          <button id="hamburger" class="sm:hidden text-white focus:outline-none" aria-label="Toggle Menu">
+              <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+              </svg>
+          </button>
+  
+          <!-- Navigation Menu -->
+          <nav id="menu" class="hidden sm:block space-x-6 absolute sm:relative top-16 left-0 sm:top-auto sm:left-auto bg-black sm:bg-transparent w-full sm:w-auto text-center sm:text-left sm:flex sm:items-center">
+              <a class="block sm:inline hover:underline py-2 sm:py-0 text-white" href="#">Home</a>
+              <a class="block sm:inline hover:underline py-2 sm:py-0 text-white" href="#">Find Route</a>
+              <a class="block sm:inline hover:underline py-2 sm:py-0 text-white" href="#">Bus Routes</a>
+              <a class="block sm:inline hover:underline py-2 sm:py-0 text-white" href="#">About Us</a>
+              <a class="block sm:inline hover:underline py-2 sm:py-0 text-white" href="#">Contact</a>
+          </nav>
+      </div>
+  </header>
+  
+
+<!-- Hero Section -->
+<section 
+    class="bg-cover bg-center h-screen relative" 
+    id="hero-image" 
+    style="background-image: url('http://localhost/projek_lomba_himaka/src/fotor-ai-20241108142222.jpg');">
+    <div class="bg-black bg-opacity-50 h-full flex flex-col items-center justify-center text-center text-white px-4">
+        <!-- Title -->
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 leading-snug">
+            Reach every corner of the city with <span class="tulisan-logo-2">Destino</span>
+        </h1>
+        
+        <!-- Subtitle -->
+        <p class="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 leading-relaxed">
+            Get me somewhere...
+        </p>
+
+        <!-- Search Bar -->
+        <div class="flex flex-col sm:flex-row items-center bg-white bg-opacity-20 rounded-full p-2 mb-6 sm:mb-8 w-full max-w-md">
+            <input 
+                type="text" 
+                class="bg-transparent text-white flex-grow p-3 text-sm sm:text-base focus:outline-none" 
+                placeholder="Enter your location"
+            />
+            <i class="fas fa-map-marker-alt text-white p-2"></i>
+        </div>
+
+        <!-- Tracker Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 gap-y-4 w-full max-w-xl px-4">
+            <!-- Bus Tracker -->
+            <div 
+                class="bg-black bg-opacity-50 p-6 rounded-lg flex flex-col items-center justify-center cursor-pointer hover:bg-[#2C6CA596] hover:bg-opacity-80 transition-colors duration-300">
+                <img src="../src/icon bus.png" alt="Bus Tracker" class="w-16 h-16 mb-2">
+                <span class="text-sm sm:text-lg font-medium">Bus Tracker</span>
+            </div>
+            <!-- Train Tracker -->
+            <div 
+                class="bg-black bg-opacity-50 p-6 rounded-lg flex flex-col items-center justify-center cursor-pointer hover:bg-[#2C6CA596] hover:bg-opacity-80 transition-colors duration-300">
+                <img src="../src/icon-kereta.png" alt="Train Tracker" class="w-16 h-16 mb-2">
+                <span class="text-sm sm:text-lg font-medium">Train Tracker</span>
+            </div>
+            <!-- Angkot Tracker -->
+            <div 
+                class="bg-black bg-opacity-50 p-6 rounded-lg flex flex-col items-center justify-center cursor-pointer hover:bg-[#2C6CA596] hover:bg-opacity-80 transition-colors duration-300">
+                <img src="../src/icon angkot.png" alt="Angkot Tracker" class="w-16 h-16 mb-2">
+                <span class="text-sm sm:text-lg font-medium">Angkot Tracker</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+    <!-- About Us, Contact Section -->
+    <section class="bg-[#1b1b1b] text-white">
+        <!-- About Us Section -->
+        <section class="bg-black-50 py-16">
+            <div class="container mx-auto px-6 lg:px-20">
+                <h2 class="text-4xl font-bold text-center text-white-800 mb-8">About Us</h2>
+                <p class="text-lg text-center text-white-600 max-w-3xl mx-auto mb-12">
+                    Destino is your ultimate public transportation companion, designed to make commuting seamless and efficient. 
+                    Our platform provides real-time tracking and detailed route information for buses, trains, and angkots, empowering users to navigate the city with ease.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Card 1 -->
+                    <div class="bg-neutral-800 shadow-lg rounded-lg p-6 text-center">
+                        <div class="bg-blue-500 text-white w-16 h-16 flex items-center justify-center mx-auto rounded-full mb-4">
+                            <i class="fas fa-map-marked-alt text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Real-Time Tracking</h3>
+                        <p class="text-white">
+                            Track buses, trains, and angkots in real time to plan your journey efficiently.
+                        </p>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="bg-neutral-800 shadow-lg rounded-lg p-6 text-center">
+                        <div class="bg-green-500 text-white w-16 h-16 flex items-center justify-center mx-auto rounded-full mb-4">
+                            <i class="fas fa-route text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Route Information</h3>
+                        <p class="text-white">
+                            Get detailed route information to ensure you never miss your destination.
+                        </p>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="bg-neutral-800 shadow-lg rounded-lg p-6 text-center">
+                        <div class="bg-yellow-500 text-white w-16 h-16 flex items-center justify-center mx-auto rounded-full mb-4">
+                            <i class="fas fa-users text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Community Driven</h3>
+                        <p class="text-white">
+                            Powered by feedback from our users, we continually improve to serve you better.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+    <section class="bg-[#1b1b1b] text-white py-12">
+        <div class="container mx-auto text-center">
+            <!-- Heading -->
+            <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-6">
+                Used And Loved By <span class="text-green-400">500+</span> Public Transportation Organizations To Improve Mobility
+            </h2> <br>
+            <!-- Logo -->
+            <div class="flex justify-center flex-wrap gap-8 mt-6">
+                <!-- Logo Transjakarta -->
+                <img src="http://localhost/projek_lomba_himaka/src/kai.png" alt="kai" class="h-12">
+                <!-- Logo Dishub -->
+                <img src="http://localhost/projek_lomba_himaka/src/Dishub.png" alt="Dishub" class="h-12">
+                <!-- Logo Damri -->
+                <img src="http://localhost/projek_lomba_himaka/src/Damri.png" alt="Damri" class="h-20">
+                <!-- Logo Polisi Indonesia -->
+                <img src="http://localhost/projek_lomba_himaka/src/temanbus.png" alt="Polisi Indonesia" class="h-12">
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="bg-[#1B1B1B] py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
+              Contact Us.
+            </h2>
+            <p class="mt-4 text-white">
+                Got a question? Send your message through the form below, and we will respond shortly.
+            </p>
+          </div>
+      
+          <div class="bg-[#262626] rounded-lg p-8 lg:flex lg:space-x-8">
+            <!-- Form -->
+            <div class="flex-1">
+              <form action="#" method="POST" class="space-y-6">
+                <!-- Nama -->
+                <div>
+                  <label for="name" class="block text-sm font-medium text-gray-200">
+                    Full Name
+                  </label>
+                  <div class="mt-2">
+                    <input type="text" id="name" name="name" required
+                      class="w-full border border-gray-700 bg-neutral-800 text-white rounded-lg shadow-md px-4 py-3 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                  </div>
+                </div>
+                <!-- Email -->
+                <div>
+                  <label for="email" class="block text-sm font-medium text-gray-200">
+                    Email
+                  </label>
+                  <div class="mt-2">
+                    <input type="email" id="email" name="email" required
+                      class="w-full border border-gray-700 bg-neutral-800 text-white rounded-lg shadow-md px-4 py-3 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                  </div>
+                </div>
+                <!-- Pesan -->
+                <div>
+                  <label for="message" class="block text-sm font-medium text-gray-200">
+                    Message
+                  </label>
+                  <div class="mt-2">
+                    <textarea id="message" name="message" rows="4" required
+                      class="w-full border border-gray-700 bg-neutral-800 text-white rounded-lg shadow-md px-4 py-3 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"></textarea>
+                  </div>
+                </div>
+                <!-- Tombol Kirim -->
+                <div>
+                  <button type="submit"
+                    class="w-full bg-[#2C6CA596] text-white font-medium py-3 px-4 rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                    Kirim Pesan
+                  </button>
+                </div>
+              </form>
+            </div>
+      
+            <!-- Kontak Tambahan -->
+            <div class="mt-8 lg:mt-0 lg:w-1/3">
+              <h3 class="text-lg font-medium text-white">Contact Information</h3>
+              <p class="mt-4 text-sm text-gray-400">
+                You can also contact us through the following information:
+              </p>
+              <ul class="mt-6 space-y-4 text-sm text-gray-400">
+                <li class="flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-indigo-500 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M16.72 3.507a2.25 2.25 0 00-3.443 1.015L11.065 11H7.59a2.25 2.25 0 100 1.5h3.475l2.213 6.478a2.25 2.25 0 104.148-1.022L16.72 3.507z" />
+                  </svg>
+                  <span>+62 123 456 789</span>
+                </li>
+                <li class="flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-indigo-500 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M16.88 3.5a4.5 4.5 0 011.067 2.883 12.04 12.04 0 01-1.121 6.016l-.313.844a3.993 3.993 0 01-3.357 2.68l-.45.068a12.041 12.041 0 01-6.016-1.121l-.844-.313a3.993 3.993 0 01-2.68-3.357l-.068-.45a12.041 12.041 0 011.121-6.016l.313-.844a3.993 3.993 0 013.357-2.68l.45-.068a12.041 12.041 0 016.016 1.121l.844.313a4.5 4.5 0 012.88 1.067zM12 11.25a.75.75 0 100 1.5.75.75 0 000-1.5z" />
+                  </svg>
+                  <span>kalahlombadiunesa@gmail.com</span>
+                </li>
+                <li class="flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-indigo-500 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M16.88 3.5a4.5 4.5 0 011.067 2.883 12.04 12.04 0 01-1.121 6.016l-.313.844a3.993 3.993 0 01-3.357 2.68l-.45.068a12.041 12.041 0 01-6.016-1.121l-.844-.313a3.993 3.993 0 01-2.68-3.357l-.068-.45a12.041 12.041 0 011.121-6.016l.313-.844a3.993 3.993 0 013.357-2.68l.45-.068a12.041 12.041 0 016.016 1.121l.844.313a4.5 4.5 0 012.88 1.067zM12 11.25a.75.75 0 100 1.5.75.75 0 000-1.5z" />
+                  </svg>
+                  <span>Jl.Pendidikan No. 123, Cibiru Kabupaten Bandung</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      
+    <footer class="bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 grid grid-cols-1 md:grid-cols-4 gap-6">
+          <!-- Logos Section -->
+          <div class="space-y-4">
+            <img src="../src/logo.png" alt=" our Logo" class="h-12">
+            <img src="../src/dishub.png" alt=" dishub Logo" class="h-12">
+            <img src="../src/temanbus.png" alt=" temn bus Logo" class="h-12">
+            <p class="text-sm text-gray-400">
+              © 2024 Kalah LOMBA di UNESA Corporation.
+            </p>
+            <a href="#" class="text-green-500 text-sm hover:underline">
+                Destino Usage Guidelines
+            </a>
+          </div>
+          <!-- Navigation Sections -->
+          <div>
+            <h3 class="font-semibold mb-4">Games</h3>
+            <ul class="space-y-2 text-sm">
+              <li><a href="#" class="hover:underline">Destino</a></li>
+              <li><a href="#" class="hover:underline">Destino Dungeons</a></li>
+              <li><a href="#" class="hover:underline">Destino Legends</a></li>
+              <li><a href="#" class="hover:underline">Destino Education</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-semibold mb-4">Community</h3>
+            <ul class="space-y-2 text-sm">
+              <li><a href="#" class="hover:underline">Community</a></li>
+              <li><a href="#" class="hover:underline">Our Features</a></li>
+              <li><a href="#" class="hover:underline">Career Support</a></li>
+              <li><a href="#" class="hover:underline">Build a Better City With us</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-semibold mb-4">Support</h3>
+            <ul class="space-y-2 text-sm">
+              <li><a href="#" class="hover:underline">Tips for Beginners</a></li>
+              <li><a href="#" class="hover:underline">Help</a></li>
+              <li><a href="#" class="hover:underline">Feedback</a></li>
+              <li><a href="#" class="hover:underline">Site Map</a></li>
+              <li><a href="#" class="hover:underline">Download</a></li>
+              <li><a href="#" class="hover:underline">Contact us</a></li>
+            </ul>
+          </div>
+        </div>
+        <!-- Bottom Section -->
+        <div class="bg-gray-900 py-4">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            <div class="text-sm text-gray-400 space-x-4">
+              <a href="#" class="hover:underline">Privacy and Cookies</a>
+              <a href="#" class="hover:underline">Terms of Use</a>
+              <a href="#" class="hover:underline">Trademarks</a>
+              <a href="#" class="hover:underline">About our ads</a>
+            </div>
+            <div class="text-sm text-gray-400">&copy; Kalah LOMBA di UNESA</div>
+          </div>
+        </div>
+      </footer>
+
+    
+
+    <!-- js nya -->
+    <script>
+        // kalo di scroll navbar nya jadi warna gray
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            const heroHeight = document.getElementById('hero-image').offsetHeight;
+    
+            if (window.scrollY > heroHeight - 50) {
+                navbar.classList.add('bg-gray-800', 'text-white', 'shadow-md'); // Warna berubah ke abu-abu gelap
+                navbar.classList.remove('bg-transparent');
+            } else {
+                navbar.classList.remove('bg-gray-800', 'shadow-md');
+                navbar.classList.add('bg-transparent');
+            }
+        });
+
+        document.getElementById('hamburger').addEventListener('click', function () {
+    const menu = document.getElementById('menu');
+    menu.classList.toggle('hidden'); // Show or hide menu
+    menu.classList.toggle('block'); // Ensure it becomes block when shown
+});
+
+
+        // Change hero background
+        function changeBackground(type) {
+            const heroImage = document.getElementById('hero-image');
+            if (type === 'bus') {
+                heroImage.style.backgroundImage = "url('http://localhost/projek_lomba_himaka/src/fotor-ai-20241108142222.jpg')";
+            } else if (type === 'train') {
+                heroImage.style.backgroundImage = "url('http://localhost/projek_lomba_himaka/src/fotor-ai-20241108142334.jpg')";
+            } else if (type === 'angkot') {
+                heroImage.style.backgroundImage = "url('http://localhost/projek_lomba_himaka/src/angkot.png')";
+            }
+        }
+    </script>
+</body>
+</html>
