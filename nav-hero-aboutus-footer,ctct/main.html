@@ -102,27 +102,30 @@ line-height: normal;
         </div>
 
         <!-- Tracker Cards -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 gap-y-4 w-full max-w-xl px-4">
-            <!-- Bus Tracker -->
-            <div 
-                class="bg-black bg-opacity-50 p-6 rounded-lg flex flex-col items-center justify-center cursor-pointer hover:bg-[#2C6CA596] hover:bg-opacity-80 transition-colors duration-300">
-                <img src="../src/icon bus.png" alt="Bus Tracker" class="w-16 h-16 mb-2">
-                <span class="text-sm sm:text-lg font-medium">Bus Tracker</span>
-            </div>
-            <!-- Train Tracker -->
-            <div 
-                class="bg-black bg-opacity-50 p-6 rounded-lg flex flex-col items-center justify-center cursor-pointer hover:bg-[#2C6CA596] hover:bg-opacity-80 transition-colors duration-300">
-                <img src="../src/icon-kereta.png" alt="Train Tracker" class="w-16 h-16 mb-2">
-                <span class="text-sm sm:text-lg font-medium">Train Tracker</span>
-            </div>
-            <!-- Angkot Tracker -->
-            <div 
-                class="bg-black bg-opacity-50 p-6 rounded-lg flex flex-col items-center justify-center cursor-pointer hover:bg-[#2C6CA596] hover:bg-opacity-80 transition-colors duration-300">
-                <img src="../src/icon angkot.png" alt="Angkot Tracker" class="w-16 h-16 mb-2">
-                <span class="text-sm sm:text-lg font-medium">Angkot Tracker</span>
-            </div>
-        </div>
-    </div>
+<!-- Update the Tracker Cards section in your hero -->
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 gap-y-4 w-full max-w-xl px-4">
+  <!-- Bus Tracker -->
+  <div 
+      onclick="changeBackground('bus')"
+      class="bg-black bg-opacity-50 p-6 rounded-lg flex flex-col items-center justify-center cursor-pointer hover:bg-[#2C6CA596] hover:bg-opacity-80 transition-colors duration-300">
+      <img src="../src/icon bus.png" alt="Bus Tracker" class="w-16 h-16 mb-2">
+      <span class="text-sm sm:text-lg font-medium">Bus Tracker</span>
+  </div>
+  <!-- Train Tracker -->
+  <div 
+      onclick="changeBackground('train')"
+      class="bg-black bg-opacity-50 p-6 rounded-lg flex flex-col items-center justify-center cursor-pointer hover:bg-[#2C6CA596] hover:bg-opacity-80 transition-colors duration-300">
+      <img src="../src/icon-kereta.png" alt="Train Tracker" class="w-16 h-16 mb-2">
+      <span class="text-sm sm:text-lg font-medium">Train Tracker</span>
+  </div>
+  <!-- Angkot Tracker -->
+  <div 
+      onclick="changeBackground('angkot')"
+      class="bg-black bg-opacity-50 p-6 rounded-lg flex flex-col items-center justify-center cursor-pointer hover:bg-[#2C6CA596] hover:bg-opacity-80 transition-colors duration-300">
+      <img src="../src/icon angkot.png" alt="Angkot Tracker" class="w-16 h-16 mb-2">
+      <span class="text-sm sm:text-lg font-medium">Angkot Tracker</span>
+  </div>
+</div>
 </section>
 
 
@@ -281,7 +284,7 @@ line-height: normal;
       </section>
       
       
-    <footer class="bg-gray-900 text-white">
+    <footer class= "bg-gray-900 text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 grid grid-cols-1 md:grid-cols-4 gap-6">
           <!-- Logos Section -->
           <div class="space-y-4">
@@ -297,12 +300,12 @@ line-height: normal;
           </div>
           <!-- Navigation Sections -->
           <div>
-            <h3 class="font-semibold mb-4">Games</h3>
+            <h3 class="font-semibold mb-4">Destino</h3>
             <ul class="space-y-2 text-sm">
               <li><a href="#" class="hover:underline">Destino</a></li>
-              <li><a href="#" class="hover:underline">Destino Dungeons</a></li>
-              <li><a href="#" class="hover:underline">Destino Legends</a></li>
-              <li><a href="#" class="hover:underline">Destino Education</a></li>
+              <li><a href="#" class="hover:underline">Shop</a></li>
+              <li><a href="#" class="hover:underline">Our Help</a></li>
+              <li><a href="#" class="hover:underline">What is Destino</a></li>
             </ul>
           </div>
           <div>
@@ -350,7 +353,7 @@ line-height: normal;
             const heroHeight = document.getElementById('hero-image').offsetHeight;
     
             if (window.scrollY > heroHeight - 50) {
-                navbar.classList.add('bg-gray-800', 'text-white', 'shadow-md'); // Warna berubah ke abu-abu gelap
+                navbar.classList.add('bg-neutral-800', 'text-white', 'shadow-md'); // Warna berubah ke abu-abu gelap
                 navbar.classList.remove('bg-transparent');
             } else {
                 navbar.classList.remove('bg-gray-800', 'shadow-md');
