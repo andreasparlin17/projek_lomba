@@ -1,6 +1,7 @@
 import React from 'react';
 
-const RouteCard = ({ code, from, to, color }) => {
+const RouteCard = ({ code, color, from, to, onMouseEnter, onFocus, onClick, onMouseLeave }) => {
+    
     let backgroundColor, codeBackgroundColor;
 
     if (color === 'yellow') {
@@ -21,14 +22,21 @@ const RouteCard = ({ code, from, to, color }) => {
     }
 
     return (
-        <div className="aspect-[220/100] w-40 lg:w-48 xl:w-56 rounded-2xl flex overflow-hidden" style={{ backgroundColor }}>
+        <div
+            className={`aspect-[220/100] w-40 lg:w-48 xl:w-56 rounded-2xl flex overflow-hidden`}
+            onMouseEnter={onMouseEnter} // Trigger hover effect
+            onFocus={onFocus} // Trigger focus effect
+            onClick={onClick} // Handle click effect to toggle default state
+            tabIndex={0} // Allow the component to be focused
+            onMouseLeave={onMouseLeave}
+        >
             <div
                 className="w-1/4 h-full flex items-center justify-center font-semibold xl:font-bold text-lg xl:text-2xl"
                 style={{ backgroundColor: codeBackgroundColor }}
             >
                 {code}
             </div>
-            <div className=" w-3/4 h-full flex flex-col justify-between py-2 pl-2 xl:text-sm text-xs">
+            <div className="w-3/4 h-full flex flex-col justify-between py-2 pl-2 xl:text-sm text-xs" style={{ backgroundColor: codeBackgroundColor }}>
                 <p>{from}</p>
                 <p>{to}</p>
             </div>

@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import OtherStopCard from './OtherStopCard';
 import CodeLabel from './CodeLabel';
 import { GoTriangleRight } from "react-icons/go";
+import { IoIosRefresh } from "react-icons/io";
 
 const OtherStops = () => {
   const scrollContainerRef = useRef(null);
@@ -16,10 +17,18 @@ const OtherStops = () => {
   };
 
   return (
-    <div className='relative lg:w-[85%] md:w-[90%] w-[95%] lg:py-10 bg-[#272727] lg:rounded-[50px] md:rounded-3xl rounded-xl shadow-card-shadow mb-12 flex flex-col lg:flex-row'>
-      <div className='lg:w-[14%] h-[25%] lg:h-full flex items-center justify-center my-5'>
-        <h3 className='text-base md:text-2xl lg:text-3xl text-center font-semibold'>
-          Other <br className='hidden lg:block' />Nearby<br className='hidden lg:block' /> Stops
+    <div className='relative lg:w-[65%] md:w-[80%] w-[90%] lg:py-10 bg-[#272727] lg:rounded-[50px] md:rounded-3xl rounded-xl shadow-card-shadow mb-12 flex flex-col lg:flex-row'>
+      <div className='lg:w-[14%] h-[25%] lg:h-full flex items-center justify-center my-5 pl-5'>
+        <h3 className="gap-1 lg:flex-col text-base md:text-2xl lg:text-3xl text-center font-semibold flex justify-center items-center">
+          <span>Other</span> 
+          <span>Nearby</span> 
+          <span>Stops</span>
+          <a href='#'>
+            <IoIosRefresh 
+              color="white" 
+              className="mx-1 lg:mx-0"
+            />
+          </a>
         </h3>
       </div>
 
