@@ -9,12 +9,12 @@ const RouteSection = () => {
     const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
 
     const routeImages = {
-        'default': '../src/assets/Default-Map.svg',
-        '1D': '../src/assets/1D-Map.svg',
-        '2D': '../src/assets/2D-Map.svg',
-        '3D': '../src/assets/3D-Map.svg',
-        '4D': '../src/assets/4D-Map.svg',
-        '5D': '../src/assets/5D-Map.svg',
+        'default': '/assets/Default-Map.svg',
+        '1D': '/assets/1D-Map.svg',
+        '2D': '/assets/2D-Map.svg',
+        '3D': '/assets/3D-Map.svg',
+        '4D': '/assets/4D-Map.svg',
+        '5D': '/assets/5D-Map.svg',
     };
 
     const zoomIn = () => {
@@ -48,26 +48,26 @@ const RouteSection = () => {
     };
 
     return (
-        <div className="relative lg:w-[65%] md:w-[80%] w-[90%] bg-[#272727] shadow-card-shadow mb-12 lg:rounded-[50px] md:rounded-3xl rounded-xl xl:overflow-hidden py-8 px-12">
+        <div className="relative lg:w-[65%] md:w-[80%] w-[90%] bg-[#272727] shadow-card-shadow mb-12 lg:rounded-[50px] md:rounded-3xl rounded-xl xl:overflow-hidden py-8 px-12 h-full gap-10 flex flex-col">
             <div className="w-full flex justify-between items-center">
                 <h3 className="font-bold text-3xl">Rute Trans Metro Pasundan</h3>
                 <img
-                    src="/src/assets/logoTransMetroPasundan.png"
+                    src="/assets/logoTransMetroPasundan.png"
                     alt="Trans Metro Pasundan"
                     className="aspect-[118/79] w-1/12"
                 />
             </div>
-            <div className="w-full h-full flex flex-col xl:flex-row justify-center items-center">
-                <div className="w-full xl:w-1/4 xl:h-full flex flex-row xl:flex-col gap-4 xl:gap-y-4 items-center xl:justify-center flex-wrap xl:mb-10">
+            <div className="w-full h-full flex flex-col justify-center items-center">
+                <div className="w-full flex flex-row gap-4 justify-center flex-wrap xl:mb-10">
                     <RouteCard
                         code={'1D'}
                         color={'yellow'}
                         from={'Leuwipanjang'}
                         to={'RSUD Otto Iskandar Dinata'}
                         onMouseEnter={() => setActiveRoute('1D')}
-                        onFocus={() => setActiveRoute('1D')}
-                        onClick={() => handleCardClick('1D')}
-                        onMouseLeave={() => setActiveRoute('default')}
+                        onFocus={() => setActiveRoute('2D')}
+                        onClick={() => setActiveRoute((prev) => (prev === '1D' ? 'default' : '1D'))}
+                        
                     />
                     <RouteCard
                         code={'2D'}

@@ -132,11 +132,11 @@ export default function Map() {
 
     map.current.on("load", async() => {  
       try {
-        const customBus = await map.current.loadImage('../src/assets/icon-bus.png');
+        const customBus = await map.current.loadImage('/assets/icon-bus.png');
         map.current.addImage('custom-bus', customBus.data);
-        const customAngkot = await map.current.loadImage('../src/assets/icon-angkot.png');
+        const customAngkot = await map.current.loadImage('/assets/icon-angkot.png');
         map.current.addImage('custom-angkot', customAngkot.data);
-        const customKereta = await map.current.loadImage('../src/assets/icon-kereta.png');
+        const customKereta = await map.current.loadImage('/assets/icon-kereta.png');
         map.current.addImage('custom-kereta', customKereta.data);
 
         // Load bus routes
@@ -527,9 +527,9 @@ export default function Map() {
   };
 
   return (
-    <div className="flex flex-col items-center w-full lg:items-stretch lg:flex-row justify-center gap-10 text-black">
-      <div className="z-10 flex flex-row md:w-[80%] w-[90%] pt-4 pb-2 lg:w-[12.5%] lg:max-w-[170px] lg:flex-col gap-4 bg-[#343332] pl-4 pr-2 items-center justify-center rounded-3xl">
-        <label className="mb-2 w-32 text-white cursor-pointer items-center justify-center  flex flex-col bg-[rgba(44,108,165,0.59)] py-3 rounded-lg px-2 mr-2 text-xl font-medium text-center">
+    <div className="flex flex-col items-center w-full lg:items-stretch lg:flex-row justify-center gap-10 text-black mt-20">
+      <div className="z-10 flex flex-row md:w-[80%] w-[90%] pt-4 pb-2 lg:w-[14.5%] lg:max-w-[170px] lg:flex-col gap-4 bg-[#272727] pl-4 pr-2 items-center justify-center rounded-3xl">
+        <label className="mb-2 w-32 text-white cursor-pointer items-center justify-center -z-99 flex flex-col bg-[rgba(44,108,165,0.59)] py-3 rounded-lg px-2 mr-2 text-xl font-medium text-center">
           <input
             type="checkbox"
             checked={geojsonVisibility.geojson2}
@@ -566,10 +566,10 @@ export default function Map() {
           </div>
         </label>
       </div>
-      <div className="relative lg:w-[55%] md:w-[80%] w-[90%] lg:aspect-[1920/1000] md:aspect-[1920/1280] aspect-[1920/1400]">
+      <div className="relative lg:w-[51%] md:w-[80%] w-[90%] lg:aspect-[1920/1000] md:aspect-[1920/1280] aspect-[1920/1400]">
         <div
           ref={mapContainer}
-          className="absolute w-full h-full flex justify-center lg:rounded-[50px] md:rounded-3xl rounded-lg"
+          className="absolute w-full h-full flex justify-center lg:rounded-[30px] md:rounded-3xl rounded-lg"
         />
       </div>
     </div>

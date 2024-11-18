@@ -1,11 +1,13 @@
 import React from 'react';
 import './index.css';
-import { Map, NearestCard, OtherStops, RouteSection } from './components';
+import { Map, NearestCard, OtherStops, RouteSection, Navbar, HeroSection } from './components';
 
 function App() {
   return(
-    <div className="App mt-14">
-      <Map />
+    <div className="App">
+    <Navbar />
+    <HeroSection />
+      <Map/>
       <section className='mt-14 '>
         <section className='w-full h-full flex justify-center'>
           <NearestCard />
