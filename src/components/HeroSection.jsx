@@ -52,7 +52,7 @@ const HeroSection = () => {
 
   return (
     <section
-      className="bg-cover bg-center h-screen relative bg-[center_bottom_33%]"
+      className="bg-cover bg-center h-screen relative"
       id="hero-image"
       style={{
         backgroundImage: "url('/assets/fotor-ai-20241108142222.jpg')",
@@ -79,7 +79,7 @@ const HeroSection = () => {
       <input 
         type="search" 
         id="default-search" 
-        className="block w-full p-4 ps-10 text-sm bg-black bg-opacity-50 p-6 backdrop-blur-[1px] rounded-lg cursor-pointer hover:bg-[#1b1b1b] hover:bg-opacity-80 transition-colors duration-300" 
+        className="block w-full ps-10 text-sm bg-black bg-opacity-50 p-6 backdrop-blur-[1px] rounded-lg cursor-pointer hover:bg-[#1b1b1b] hover:bg-opacity-80 transition-colors duration-300" 
         placeholder={placeholderText}  
       />
     </div>

@@ -2,12 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+
+@font-face {
+    font-family: 'Doto';
+    src: url('/assets/fonts/Doto/Doto-VariableFont_ROND,wght.ttf') format('truetype');
+    font-weight: 100 900; 
+    font-style: normal;
+}
+
+
 * {
     font-family: "Figtree", sans-serif;
     font-optical-sizing: auto;
     /* font-weight: <weight>; */
     font-style: normal;
 }
+
+
 
 .tulisan-logo{
     color: #F5E8D7;

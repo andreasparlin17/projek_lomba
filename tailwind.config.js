@@ -5,15 +5,16 @@ module.exports = {
   ],
   theme: {
     extend: {
-      fontFamily:{
-        figtree: ["Figtree", 'sans-serif']
+      fontFamily: {
+        figtree: ["Figtree", 'sans-serif'], 
+        doto: ['Doto', "Figtree", 'sans-serif']
       },
-      boxShadow:{
+      boxShadow: {
         'card-shadow': '0 4px 4px rgba(0, 0, 0, 0.25)',
-      }
+      },
     },
   },
   plugins: [
-    require('tailwind-scrollbar-hide')
+    require('tailwind-scrollbar-hide'),
   ],
 };
