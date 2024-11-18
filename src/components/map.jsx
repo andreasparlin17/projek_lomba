@@ -87,31 +87,26 @@ export default function Map() {
     if (visible && pointData.current[pointId]) {
       const point = pointData.current[pointId];
       const popup = new maptilersdk.Popup({
-        closeButton: false,
-        closeOnClick: false,
+        closeButton: true,
+        closeOnClick: true,
         offset: 0,
       })
         .setLngLat(point.geometry.coordinates)
         .setHTML(
           vehicleType === 'bus' ?
-            `<div class="font-sans text-white bg-transparent rounded-xl shadow-md flex w-full h-full">
-                <div class='bg-[#DB3A34] flex items-center font-medium justify-center w-1/4 text-xl'>${point.properties.ref}</div>
-                <div class='h-full flex flex-col justify-between py-3 px-2 bg-[#224869]'>
-                    <div class='font-medium'>${point.properties.to}</div>
-                    <div> Next Stop in ${Math.floor(Math.random() * 60)} minutes</div>
-                </div>
-            </div>` :
+            `<div><span class="bg-[#0724a6] px-2 text-white p-1 rounded-md">${point.properties.ref}</span> ${point.properties.to}</div>
+                    <div> Next Stop in <b>${Math.floor(Math.random() * 60)}</b> minutes</div>` :
           vehicleType === 'train' ?
-            `<div class="font-sans text-white rounded-xl shadow-md flex flex-col justify-between items-center w-full h-full bg-[#224869]">
-                <div class='font-medium'>${point.properties.name}</div>
-                <div> Next Stop in ${Math.floor(Math.random() * 60)} minutes</div>
-            </div>` :
-            `<div class="font-sans text-white rounded-lg p-3 shadow-md flex flex-col justify-center bg-[#224869] items-center w-full h-full">
+            `kereta` :
+            `<div class="text-black">
                 <div class='font-medium'>${point.properties.name}</div>
             </div>`
         );
-      
-      popup.addTo(map.current);
+
+      map.current.on('click', pointId, () => {
+        popup.addTo(map.current);
+      });
+
       popups.current[pointId] = popup;
     }
   };
@@ -132,11 +127,11 @@ export default function Map() {
 
     map.current.on("load", async() => {  
       try {
-        const customBus = await map.current.loadImage('/assets/icon-bus.png');
+        const customBus = await map.current.loadImage('/assets/icons/bus.png');
         map.current.addImage('custom-bus', customBus.data);
-        const customAngkot = await map.current.loadImage('/assets/icon-angkot.png');
+        const customAngkot = await map.current.loadImage('/assets/icons/angkot.png');
         map.current.addImage('custom-angkot', customAngkot.data);
-        const customKereta = await map.current.loadImage('/assets/icon-kereta.png');
+        const customKereta = await map.current.loadImage('/assets/icons/kereta.png');
         map.current.addImage('custom-kereta', customKereta.data);
 
         // Load bus routes
@@ -428,7 +423,7 @@ export default function Map() {
   const setupMovingIcon = (lineFeature, pointId, vehicleType, mapInstance) => {
     const route = turf.featureCollection([lineFeature]);
     const lineDistance = turf.length(route.features[0], { units: "kilometers" });
-    const steps = 1200;
+    const steps = 8000;
     const arc = [];
     
     for (let i = 0; i < lineDistance; i += lineDistance / steps) {
@@ -465,7 +460,7 @@ export default function Map() {
       type: "symbol",
       layout: {
         "icon-image": vehicleType === 'bus' ? 'custom-bus' : vehicleType === 'train' ? 'custom-kereta' : 'custom-angkot',
-        "icon-size": vehicleType === 'bus' ? 0.5 : vehicleType === 'train' ? 0.2 : 0.1,
+        "icon-size": vehicleType === 'bus' ? 0.4 : vehicleType === 'train' ? 0.5 : 0.3,
         "icon-rotate": ["get", "bearing"],
         "icon-rotation-alignment": "map",
         "icon-allow-overlap": true,
@@ -527,7 +522,7 @@ export default function Map() {
   };
 
   return (
-    <div className="flex flex-col items-center w-full lg:items-stretch lg:flex-row justify-center gap-10 text-black mt-20">
+    <div className="flex flex-col items-center w-full lg:items-stretch lg:flex-row justify-center gap-10 text-black mt-20 sm:mt-[200px]">
       <div className="z-10 flex flex-row md:w-[80%] w-[90%] pt-4 pb-2 lg:w-[14.5%] lg:max-w-[170px] lg:flex-col gap-4 bg-[#272727] pl-4 pr-2 items-center justify-center rounded-3xl">
         <label className="mb-2 w-32 text-white cursor-pointer items-center justify-center -z-99 flex flex-col bg-[rgba(44,108,165,0.59)] py-3 rounded-lg px-2 mr-2 text-xl font-medium text-center">
           <input

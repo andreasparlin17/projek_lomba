@@ -42,11 +42,11 @@ const HeroSection = () => {
   const changeBackground = (type) => {
     const heroImage = document.getElementById('hero-image');
     if (type === 'bus') {
-      heroImage.style.backgroundImage = "url('/assets/fotor-ai-20241108142222.jpg')";
+      heroImage.style.backgroundImage = "url('/assets/fotor-ai-20241108142222.png')";
     } else if (type === 'train') {
-      heroImage.style.backgroundImage = "url('/assets/kereta-fade.png')";
+      heroImage.style.backgroundImage = "url('/assets/fotor-ai-20241108142334.png')";
     } else if (type === 'angkot') {
-      heroImage.style.backgroundImage = "url('/assets/angkot.png')";
+      heroImage.style.backgroundImage = "url('/assets/fotor-ai-20241108142347.png')";
     }
   };
 
@@ -58,7 +58,7 @@ const HeroSection = () => {
         backgroundImage: "url('/assets/fotor-ai-20241108142222.jpg')",
       }}
     >
-      <div className="bg-black bg-opacity-0 h-full flex flex-col items-center  text-center text-white px-4">
+      <div className="bg-black bg-opacity-0 h-full flex flex-col items-center text-center text-white px-4">
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 leading-snug max-w-xl text-left mt-48">
           Reach every corner of the city with <span className="tulisan-logo-2">Destino</span>
         </h1>
@@ -68,35 +68,36 @@ const HeroSection = () => {
         </p>
         
         <form className="max-w-xl w-[80svw] mx-xl mb-10 -mt-7">   
-          <label htmlFor="default-search" className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">
-            Search
-          </label>
-          <div className="relative flex flex-col gap-4 sm:flex-row sm:gap-0 justify-items-center items-center">
-            <div className="relative w-full">
-              <div className="absolute inset-y-0 start-0 flex items-center ps-3 ">
-                <Search className="w-5 h-5 text-gray-400" />
-              </div>
-              <input 
-                type="search" 
-                id="default-search" 
-                className="block w-full ps-10 text-sm bg-black bg-opacity-50 p-6 backdrop-blur-[1px] rounded-lg cursor-pointer hover:bg-[#1b1b1b] hover:bg-opacity-80 transition-colors duration-300" 
-                placeholder={placeholderText}  
-              />
-            </div>
-            <button 
-              type="submit" 
-              className="text-white bg-gray-600 hover:bg-[#2C6CA596] focus:ring-4 focus:outline-none focus:ring-gray-400 font-medium rounded-lg text-sm px-4 py-2 dark:bg-gray-800 dark:hover:bg-[#2C6CA596] dark:focus:ring-gray-900 sm:absolute sm:end-2.5 sm:bottom-2.5 flex items-center justify-center gap-2"
-            >
-              <span className="flex items-center h-9">
-                Fly me to the moon! 
-              </span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="rgba(255, 255, 255, 0.7)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/>
-                <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/>
-                <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/>
-                <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>
-              </svg>
-            </button>
+
+  <label htmlFor="default-search" className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">
+    Search
+  </label>
+  <div className="relative flex flex-col gap-4 sm:flex-row sm:gap-0 justify-items-center items-center">
+    <div className="relative w-full">
+      <div className="absolute inset-y-0 start-0 flex items-center ps-3 ">
+        <Search className="w-5 h-5 text-gray-400" />
+      </div>
+      <input 
+        type="search" 
+        id="default-search" 
+        className="block w-full ps-10 text-sm bg-black bg-opacity-50 p-6 backdrop-blur-[1px] rounded-2xl cursor-pointer hover:bg-[#1b1b1b] hover:bg-opacity-80 transition-colors duration-150" 
+        placeholder={placeholderText}  
+      />
+    </div>
+    <button 
+  type="submit" 
+  className="text-white bg-gray-600 hover:bg-[#2C6CA596] focus:ring-4 focus:outline-none focus:ring-gray-400 font-medium rounded-lg text-sm px-4 py-2 dark:bg-gray-800 dark:hover:bg-[#2C6CA596] dark:focus:ring-gray-900 sm:absolute sm:end-2.5 sm:bottom-2.5 flex items-center justify-center gap-2"
+>
+  <span className="flex items-center h-9">
+    Fly me to the moon! 
+  </span>
+  <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="rgba(255, 255, 255, 0.7)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/>
+    <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/>
+    <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/>
+    <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>
+  </svg>
+</button>
 
           </div>
         </form>
@@ -106,7 +107,7 @@ const HeroSection = () => {
           {/* Bus Tracker */}
           <div
             onClick={() => changeBackground("bus")}
-            className="bg-black bg-opacity-50 p-6 w-28 aspect-[108/123] md:aspect-[450/110] backdrop-blur-sm rounded-3xl flex flex-col items-center justify-center cursor-pointer hover:bg-[#2C6CA596] hover:bg-opacity-80 transition-colors duration-150"
+            className="bg-black bg-opacity-50 p-6 w-28 aspect-[108/123] md:aspect-[450/110] md:w-40 backdrop-blur-sm rounded-3xl flex flex-col items-center justify-center cursor-pointer hover:bg-[#2C6CA596] hover:bg-opacity-80 transition-colors duration-150"
           >
             <BusFront size = {66} />
             <span className="text-sm sm:text-lg font-medium">Bus Tracker</span>
@@ -115,7 +116,7 @@ const HeroSection = () => {
           {/* Train Tracker */}
           <div
             onClick={() => changeBackground("train")}
-            className="bg-black bg-opacity-50 p-6 w-28 aspect-[108/123] md:aspect-[450/110] backdrop-blur-sm rounded-3xl flex flex-col items-center justify-center cursor-pointer hover:bg-[#2C6CA596] hover:bg-opacity-80 transition-colors duration-150"
+            className="bg-black bg-opacity-50 p-6 w-28 aspect-[108/123] md:aspect-[450/110] md:w-40 backdrop-blur-sm rounded-3xl flex flex-col items-center justify-center cursor-pointer hover:bg-[#2C6CA596] hover:bg-opacity-80 transition-colors duration-150"
           >
             <TrainFront size = {66}/>
             <span className="text-sm sm:text-lg font-medium">Train Tracker</span>
@@ -124,7 +125,7 @@ const HeroSection = () => {
           {/* Angkot Tracker */}
           <div
             onClick={() => changeBackground("angkot")}
-            className="bg-black bg-opacity-50 p-6 w-28 aspect-[108/123] md:aspect-[450/110] backdrop-blur-sm rounded-3xl flex flex-col items-center justify-center cursor-pointer hover:bg-[#2C6CA596] hover:bg-opacity-80 transition-colors duration-150"
+            className="bg-black bg-opacity-50 p-6 w-28 aspect-[108/123] md:aspect-[450/110] md:w-40 backdrop-blur-sm rounded-3xl flex flex-col items-center justify-center cursor-pointer hover:bg-[#2C6CA596] hover:bg-opacity-80 transition-colors duration-150"
           >
             <CarFront size = {66} />
             <span className="text-sm sm:text-lg font-medium">Angkot Tracker</span>
