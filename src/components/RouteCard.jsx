@@ -23,7 +23,7 @@ const RouteCard = ({ code, color, from, to, onMouseEnter, onFocus, onClick, onMo
 
     return (
         <div
-            className={`aspect-[220/100] w-40 lg:w-48 xl:w-56 rounded-2xl flex overflow-hidden h-20 ${className} cursor-pointer`}
+            className={`aspect-[220/100] w-36 lg:w-44 xl:w-52 rounded-2xl flex overflow-hidden h-20 ${className} cursor-pointer`}
             onMouseEnter={onMouseEnter}
             onFocus={onFocus}
             onClick={onClick}
@@ -37,8 +37,8 @@ const RouteCard = ({ code, color, from, to, onMouseEnter, onFocus, onClick, onMo
                 {code}
             </div>
             <div className="w-3/4 h-full flex flex-col justify-between py-2 pl-2 xl:text-sm text-xs" style={{ backgroundColor: backgroundColor }}>
-                <p>{from}</p>
-                <p>{to}</p>
+                <p className='leading-tight'>{from}</p>
+                <p className='leading-tight'>{to}</p>
             </div>
         </div>
     );
