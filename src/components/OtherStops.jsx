@@ -19,10 +19,10 @@ const OtherStops = () => {
   return (
     <div className='relative lg:w-[65%] md:w-[80%] w-[90%] lg:py-10 bg-[#272727] lg:rounded-[50px] md:rounded-3xl rounded-xl shadow-card-shadow mb-4 flex flex-col lg:flex-row h-72 pt-4'>
       <div className='lg:w-[14%] h-[25%] lg:h-full flex items-center justify-center my-5 pl-5'>
-        <h3 className=" lg:flex-col text-base md:text-2xl lg:text-3xl text-center font-semibold flex justify-center items-center -mt-8">
+        <h3 className=" lg:flex-col text-base md:text-2xl lg:text-3xl text-center font-semibold flex justify-center items-center -mt-8 gap-0.5 lg:gap-0">
           <span>Other</span> 
           <span>Nearby</span> 
-          <span className='mb-4'>Stops</span>
+          <span className='lg:mb-4'>Stops</span>
           <a href='#'>
             <IoIosRefresh 
               color="white" 
