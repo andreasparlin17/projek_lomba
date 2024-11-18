@@ -3,13 +3,14 @@ import RouteCard from './RouteCard';
 
 const RouteSection = () => {
     const [activeRoute, setActiveRoute] = useState('default'); // Active route for clicks
+    const [hoveredRoute, setHoveredRoute] = useState(null); // Hovered route for PCs
     const [zoomLevel, setZoomLevel] = useState(1); // Zoom level
     const [offset, setOffset] = useState({ x: 0, y: 0 }); // Drag position
     const [isDragging, setIsDragging] = useState(false);
     const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
 
     const routeImages = {
-        'default': '/assets/Default-Map.svg',
+        default: '/assets/Default-Map.svg',
         '1D': '/assets/1D-Map.svg',
         '2D': '/assets/2D-Map.svg',
         '3D': '/assets/3D-Map.svg',
@@ -17,13 +18,8 @@ const RouteSection = () => {
         '5D': '/assets/5D-Map.svg',
     };
 
-    const zoomIn = () => {
-        setZoomLevel((prevZoom) => Math.min(3, prevZoom + 0.1));
-    };
-
-    const zoomOut = () => {
-        setZoomLevel((prevZoom) => Math.max(1, prevZoom - 0.1));
-    };
+    const zoomIn = () => setZoomLevel((prevZoom) => Math.min(3, prevZoom + 0.1));
+    const zoomOut = () => setZoomLevel((prevZoom) => Math.max(1, prevZoom - 0.1));
 
     const handleDragStart = (e) => {
         e.preventDefault();
@@ -39,13 +35,13 @@ const RouteSection = () => {
         });
     };
 
-    const handleDragEnd = () => {
-        setIsDragging(false);
-    };
+    const handleDragEnd = () => setIsDragging(false);
 
     const handleCardClick = (code) => {
-      setActiveRoute(activeRoute === code ? 'default' : code);
+        setActiveRoute((prev) => (prev === code ? 'default' : code));
     };
+
+    const displayedRoute = activeRoute !== 'default' ? activeRoute : hoveredRoute || 'default';
 
     return (
         <div className="relative lg:w-[65%] md:w-[80%] w-[90%] bg-[#272727] shadow-card-shadow mb-12 lg:rounded-[50px] md:rounded-3xl rounded-xl xl:overflow-hidden py-8 px-12 h-full gap-10 flex flex-col">
@@ -59,67 +55,49 @@ const RouteSection = () => {
             </div>
             <div className="w-full h-full flex flex-col justify-center items-center">
                 <div className="w-full flex flex-row gap-4 justify-center flex-wrap xl:mb-10">
-                    <RouteCard
-                        code={'1D'}
-                        color={'yellow'}
-                        border={'5px solid white'}
-                        from={'Leuwipanjang'}
-                        to={'RSUD Otto Iskandar Dinata'}
-                        onMouseEnter={() => setActiveRoute('1D')}
-                        onFocus={() => setActiveRoute('1D')}
-                        onClick={() => setActiveRoute((prev) => (prev === '1D' ? 'default' : '1D'))}
-                        
-                    />
-                    <RouteCard
-                        code={'2D'}
-                        color={'red'}
-                        from={'IKEA Kota Baru Parahyangan'}
-                        to={'Alun-alun Bandung'}
-                        onMouseEnter={() => setActiveRoute('2D')}
-                        onFocus={() => setActiveRoute('2D')}
-                        onClick={() => handleCardClick('2D')} // Handle click event
-                        onMouseLeave={() => setActiveRoute('default')}
-                    />
-                    <RouteCard
-                        code={'3D'}
-                        color={'purple'}
-                        from={'Baleendah'}
-                        to={'Bandung Electronic Center (BEC)'}
-                        onMouseEnter={() => setActiveRoute('3D')}
-                        onFocus={() => setActiveRoute('3D')}
-                        onClick={() => handleCardClick('3D')} // Handle click event
-                        onMouseLeave={() => setActiveRoute('default')}
-                    />
-                    <RouteCard
-                        code={'4D'}
-                        color={'blue'}
-                        from={'Leuwipanjang'}
-                        to={'UNPAD Dipatiukur'}
-                        onMouseEnter={() => setActiveRoute('4D')}
-                        onFocus={() => setActiveRoute('4D')}
-                        onClick={() => handleCardClick('4D')} // Handle click event
-                        onMouseLeave={() => setActiveRoute('default')}
-                    />
-                    <RouteCard
-                        code={'5D'}
-                        color={'pink'}
-                        from={'UNPAD Dipatiukur'}
-                        to={'UNPAD Jatinangor'}
-                        onMouseEnter={() => setActiveRoute('5D')}
-                        onFocus={() => setActiveRoute('5D')}
-                        onClick={() => handleCardClick('5D')} // Handle click event
-                        onMouseLeave={() => setActiveRoute('default')}
-                    />
+                    {['1D', '2D', '3D', '4D', '5D'].map((route) => (
+                        <RouteCard
+                            key={route}
+                            code={route}
+                            color={{
+                                '1D': 'yellow',
+                                '2D': 'red',
+                                '3D': 'purple',
+                                '4D': 'blue',
+                                '5D': 'pink',
+                            }[route]}
+                            from={{
+                                '1D': 'Leuwipanjang',
+                                '2D': 'IKEA Kota Baru Parahyangan',
+                                '3D': 'Baleendah',
+                                '4D': 'Leuwipanjang',
+                                '5D': 'UNPAD Dipatiukur',
+                            }[route]}
+                            to={{
+                                '1D': 'RSUD Otto Iskandar Dinata',
+                                '2D': 'Alun-alun Bandung',
+                                '3D': 'Bandung Electronic Center (BEC)',
+                                '4D': 'UNPAD Dipatiukur',
+                                '5D': 'UNPAD Jatinangor',
+                            }[route]}
+                            onMouseEnter={() => setHoveredRoute(route)}
+                            onMouseLeave={() => setHoveredRoute(null)}
+                            onClick={() => handleCardClick(route)}
+                            className={`${
+                                activeRoute === route ? 'border-2' : 'border-0'
+                            } transition-all duration-150 hover:border-2`}
+                        />
+                    ))}
                 </div>
 
                 <div
-                    className="relative xl:w-full w-full mt-10 xl:mt-0 xl:ml-10 mb-10 overflow-hidden  bg-[#333232] rounded-2xl p-8"
+                    className="relative xl:w-full w-full mt-10 xl:mt-0 xl:ml-10 mb-10 overflow-hidden bg-[#333232] rounded-2xl p-8"
                     onMouseMove={handleDragMove}
                     onMouseUp={handleDragEnd}
                     onMouseLeave={handleDragEnd}
                 >
                     <img
-                        src={routeImages[activeRoute]} // Use hoveredRoute or activeRoute
+                        src={routeImages[displayedRoute]}
                         alt="Map"
                         className="cursor-grab transition-transform duration-300"
                         style={{
@@ -129,8 +107,12 @@ const RouteSection = () => {
                         onMouseDown={handleDragStart}
                     />
                     <div className="absolute top-4 right-4 flex flex-col items-center">
-                        <button onClick={zoomIn} className="bg-white text-black p-2 rounded-full mb-2">+</button>
-                        <button onClick={zoomOut} className="bg-white text-black p-2 rounded-full">-</button>
+                        <button onClick={zoomIn} className="bg-white text-black p-2 rounded-full mb-2">
+                            +
+                        </button>
+                        <button onClick={zoomOut} className="bg-white text-black p-2 rounded-full">
+                            -
+                        </button>
                     </div>
                 </div>
             </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const RouteCard = ({ code, color, from, to, onMouseEnter, onFocus, onClick, onMouseLeave }) => {
+const RouteCard = ({ code, color, from, to, onMouseEnter, onFocus, onClick, onMouseLeave, className }) => {
     
     let backgroundColor, codeBackgroundColor;
 
@@ -23,11 +23,11 @@ const RouteCard = ({ code, color, from, to, onMouseEnter, onFocus, onClick, onMo
 
     return (
         <div
-            className={`aspect-[220/100] w-40 lg:w-48 xl:w-56 rounded-2xl flex overflow-hidden h-20 border-2`}
-            onMouseEnter={onMouseEnter} // Trigger hover effect
-            onFocus={onFocus} // Trigger focus effect
-            onClick={onClick} // Handle click effect to toggle default state
-            tabIndex={0} // Allow the component to be focused
+            className={`aspect-[220/100] w-40 lg:w-48 xl:w-56 rounded-2xl flex overflow-hidden h-20 ${className} cursor-pointer`}
+            onMouseEnter={onMouseEnter}
+            onFocus={onFocus}
+            onClick={onClick}
+            tabIndex={0}
             onMouseLeave={onMouseLeave}
         >
             <div
