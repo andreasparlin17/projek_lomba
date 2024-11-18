@@ -62,10 +62,11 @@ const RouteSection = () => {
                     <RouteCard
                         code={'1D'}
                         color={'yellow'}
+                        border={'5px solid white'}
                         from={'Leuwipanjang'}
                         to={'RSUD Otto Iskandar Dinata'}
                         onMouseEnter={() => setActiveRoute('1D')}
-                        onFocus={() => setActiveRoute('2D')}
+                        onFocus={() => setActiveRoute('1D')}
                         onClick={() => setActiveRoute((prev) => (prev === '1D' ? 'default' : '1D'))}
                         
                     />
@@ -112,7 +113,7 @@ const RouteSection = () => {
                 </div>
 
                 <div
-                    className="relative xl:w-full w-full mt-10 xl:mt-0 xl:ml-10 mb-10 overflow-hidden"
+                    className="relative xl:w-full w-full mt-10 xl:mt-0 xl:ml-10 mb-10 overflow-hidden  bg-[#333232] rounded-2xl p-8"
                     onMouseMove={handleDragMove}
                     onMouseUp={handleDragEnd}
                     onMouseLeave={handleDragEnd}
