@@ -8,6 +8,10 @@ import RouteSection from "./RouteSection";
 import RouteCard from "./RouteCard";
 import Navbar from "./Navbar";
 import HeroSection from "./HeroSection";
+import AboutUsContact from "./AboutUsContact";
+import Partners from "./Partners";
+import Contact from "./Contact";
+import Footer from "./footer";
 
 export{
     Navbar,
@@ -19,5 +23,9 @@ export{
     OtherStops,
     OtherStopCard,
     RouteSection,
-    RouteCard
+    RouteCard,
+    AboutUsContact,
+    Partners,
+    Contact,
+    Footer
 }

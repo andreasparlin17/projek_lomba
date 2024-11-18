@@ -44,7 +44,7 @@ const RouteSection = () => {
     const displayedRoute = activeRoute !== 'default' ? activeRoute : hoveredRoute || 'default';
 
     return (
-        <div className="relative lg:w-[65%] md:w-[80%] w-[90%] bg-[#272727] shadow-card-shadow mb-12 lg:rounded-[50px] md:rounded-3xl rounded-xl xl:overflow-hidden py-8 px-12 h-full gap-10 flex flex-col">
+        <div className="relative lg:w-[65%] md:w-[80%] w-[90%] bg-[#272727] shadow-card-shadow mb-6 lg:rounded-[50px] md:rounded-3xl rounded-xl xl:overflow-hidden py-4 px-12 h-full gap-10 flex flex-col">
             <div className="w-full flex justify-between items-center">
                 <h3 className="font-bold text-3xl">Rute Trans Metro Pasundan</h3>
                 <img
