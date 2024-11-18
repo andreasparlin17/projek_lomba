@@ -10,7 +10,7 @@ const DirectionButton = ({type}) => {
     }
     else if(type=='button-card'){
         return (
-            <button className='hover:cursor-pointer bg-[#3B3B3B] p-3 font-thin text-sm flex items-center justify-center gap-1.5 w-full text-nowrap h-8'>See Directions <RiExternalLinkLine size={18} className='inline'/></button>
+            <button className='hover:cursor-pointer bg-[#3B3B3B] p-3 font-thin text-sm flex items-center justify-center gap-1.5 w-full text-nowrap h-8 rounded-b-xl'>See Directions <RiExternalLinkLine size={18} className='inline'/></button>
         )
     }
 

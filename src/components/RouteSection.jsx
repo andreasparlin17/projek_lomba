@@ -46,11 +46,11 @@ const RouteSection = () => {
     return (
         <div className="relative lg:w-[65%] md:w-[80%] w-[90%] bg-[#272727] shadow-card-shadow mb-12 lg:rounded-[50px] md:rounded-3xl rounded-xl xl:overflow-hidden py-8 px-12 h-full gap-10 flex flex-col">
             <div className="w-full flex justify-between items-center">
-                <h3 className="font-bold text-3xl">Rute Trans Metro Pasundan</h3>
+                <h3 className="font-bold md:text-2xl text-lg sm:text-xl lg:text-3xl">Rute Trans Metro Pasundan</h3>
                 <img
                     src="/assets/logoTransMetroPasundan.png"
                     alt="Trans Metro Pasundan"
-                    className="aspect-[118/79] w-1/12"
+                    className="aspect-[118/79] lg:w-1/12 md:w-1/6 w-1/4"
                 />
             </div>
             <div className="w-full h-full flex flex-col justify-center items-center">

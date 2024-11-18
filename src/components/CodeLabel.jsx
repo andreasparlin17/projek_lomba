@@ -12,7 +12,7 @@ const CodeLabel = ({ children, color, className}) => {
     }
 
     return (
-        <span className={`rounded-md p-2 font-bold ${className}`} style={{ backgroundColor }} >
+        <span className={`lg:text-base text-xm rounded-md p-2 font-bold ${className}`} style={{ backgroundColor }} >
             {children}
         </span>
     );
