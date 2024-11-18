@@ -75,7 +75,7 @@ const Navbar = () => {
           id="menu"
           className={`${
             menuOpen ? "block" : "hidden"
-          } space-x-6 absolute sm:relative top-16 left-0 sm:top-auto sm:left-auto bg-black sm:bg-transparent w-full sm:w-auto text-center sm:text-left sm:flex sm:items-center`}
+          } space-x-6 absolute sm:relative top-16 left-0 sm:top-auto sm:left-auto bg-[#272727] sm:bg-transparent w-full sm:w-auto text-center sm:text-left sm:flex sm:items-center`}
         >
           <a
             className="block sm:inline hover:underline py-2 sm:py-0 text-white"
@@ -91,19 +91,19 @@ const Navbar = () => {
           </a>
           <a
             className="block sm:inline hover:underline py-2 sm:py-0 text-white"
-            href="#"
+            href="#routes"
           >
             Bus Routes
           </a>
           <a
             className="block sm:inline hover:underline py-2 sm:py-0 text-white"
-            href="#"
+            href="#about"
           >
             About Us
           </a>
           <a
             className="block sm:inline hover:underline py-2 sm:py-0 text-white"
-            href="#"
+            href="#contact"
           >
             Contact
           </a>

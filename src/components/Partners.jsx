@@ -2,7 +2,7 @@ import React from "react";
 
 const PublicTransportSection = () => {
   return (
-    <section className="bg-[#1b1b1b] text-white py-12">
+    <section className="bg-[#1b1b1b] text-white py-12 id='partner'">
       <div className="container mx-auto text-center">
         {/* Heading */}
         <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6">

@@ -3,7 +3,7 @@ import { Timer, Route, UsersRound } from "lucide-react";
 
 const AboutUsContact = () => {
     return (
-        <section className="bg-[#1b1b1b] text-white">
+        <section className="bg-[#1b1b1b] text-white" id='about'>
             {/* About Us Section */}
             <section className="bg-black-50 py-16">
                 <div className="container mx-auto px-6 lg:px-20">

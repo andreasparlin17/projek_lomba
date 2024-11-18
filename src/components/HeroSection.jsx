@@ -42,11 +42,11 @@ const HeroSection = () => {
   const changeBackground = (type) => {
     const heroImage = document.getElementById('hero-image');
     if (type === 'bus') {
-      heroImage.style.backgroundImage = "url('/assets/fotor-ai-20241108142222.jpg')";
+      heroImage.style.backgroundImage = "url('/assets/fotor-ai-20241108142222.png')";
     } else if (type === 'train') {
-      heroImage.style.backgroundImage = "url('/assets/kereta-fade.png')";
+      heroImage.style.backgroundImage = "url('/assets/fotor-ai-20241108142334.png')";
     } else if (type === 'angkot') {
-      heroImage.style.backgroundImage = "url('/assets/angkot.png')";
+      heroImage.style.backgroundImage = "url('/assets/fotor-ai-20241108142347.png')";
     }
   };
 
@@ -79,7 +79,7 @@ const HeroSection = () => {
       <input 
         type="search" 
         id="default-search" 
-        className="block w-full ps-10 text-sm bg-black bg-opacity-50 p-6 backdrop-blur-[1px] rounded-lg cursor-pointer hover:bg-[#1b1b1b] hover:bg-opacity-80 transition-colors duration-300" 
+        className="block w-full ps-10 text-sm bg-black bg-opacity-50 p-6 backdrop-blur-[1px] rounded-2xl cursor-pointer hover:bg-[#1b1b1b] hover:bg-opacity-80 transition-colors duration-150" 
         placeholder={placeholderText}  
       />
     </div>

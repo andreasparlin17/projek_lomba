@@ -522,7 +522,7 @@ export default function Map() {
   };
 
   return (
-    <div className="flex flex-col items-center w-full lg:items-stretch lg:flex-row justify-center gap-10 text-black mt-20">
+    <div className="flex flex-col items-center w-full lg:items-stretch lg:flex-row justify-center gap-10 text-black mt-20 sm:mt-[200px]">
       <div className="z-10 flex flex-row md:w-[80%] w-[90%] pt-4 pb-2 lg:w-[14.5%] lg:max-w-[170px] lg:flex-col gap-4 bg-[#272727] pl-4 pr-2 items-center justify-center rounded-3xl">
         <label className="mb-2 w-32 text-white cursor-pointer items-center justify-center -z-99 flex flex-col bg-[rgba(44,108,165,0.59)] py-3 rounded-lg px-2 mr-2 text-xl font-medium text-center">
           <input
